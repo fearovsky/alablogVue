@@ -10,10 +10,7 @@ const article = ref({
 
 const handleSubmit = () => {
   emit('submit', { ...article.value })
-  // Instead of immediate reset, we'll use a smooth transition
-  setTimeout(() => {
-    article.value = { title: '', content: '' }
-  }, 300) // Wait for the success message to show before resetting
+  article.value = { title: '', content: '' }
 }
 </script>
 
@@ -88,15 +85,5 @@ const handleSubmit = () => {
 
 .submit-btn:hover {
   background: #45a049;
-}
-
-.message {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  text-align: center;
-  transition: opacity 0.3s ease;
 }
 </style>
